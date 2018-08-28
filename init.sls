@@ -4,8 +4,8 @@ include:
   - nginx.epel              # This will include our epel.sls before running this state
 
 install_nginx:
-  - pkg.installed:
+  pkg.installed:
     - name: nginx           # Installs the NGINX Package
-  - service.running:
+  service.running:
     - name: nginx           
-    - enable: true
+    - enable: true          # Makes sure that the nginx is started
